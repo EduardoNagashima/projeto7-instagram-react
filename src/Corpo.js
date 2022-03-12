@@ -15,99 +15,17 @@ export default function Corpo() {
                         <ion-icon name="chevron-forward-circle"></ion-icon>
                     </div>
                 </div>
-
                 <div class="posts">
                     <Post iconePost="assets/img/meowed.svg" nome="meowed" imgPost="assets/img/gato-telefone.svg" iconePessoaCurtiu="assets/img/respondeai.svg" pessoaCurtiu="respondeai" numCurtidas="101.523" />
 
                     <Post iconePost="assets/img/barked.svg" nome="barked" imgPost="assets/img/dog.svg" iconePessoaCurtiu="assets/img/adorable_animals.svg" pessoaCurtiu="adorable_animals" numCurtidas="99.159" />
-
                 </div>
             </div>
-
             <div class="sidebar">
-                <div class="usuario">
-                    <img src="assets/img/catanacomics.svg" />
-                    <div class="texto">
-                        <strong>catanacomics</strong>
-                        Catana
-                    </div>
-                </div>
-
-                <div class="sugestoes">
-                    <div class="titulo">
-                        Sugestões para você
-                        <div>Ver tudo</div>
-                    </div>
-
-                    <div class="sugestao">
-                        <div class="usuario">
-                            <img src="assets/img/bad.vibes.memes.svg" />
-                            <div class="texto">
-                                <div class="nome">bad.vibes.memes</div>
-                                <div class="razao">Segue você</div>
-                            </div>
-                        </div>
-
-                        <div class="seguir">Seguir</div>
-                    </div>
-
-                    <div class="sugestao">
-                        <div class="usuario">
-                            <img src="assets/img/chibirdart.svg" />
-                            <div class="texto">
-                                <div class="nome">chibirdart</div>
-                                <div class="razao">Segue você</div>
-                            </div>
-                        </div>
-
-                        <div class="seguir">Seguir</div>
-                    </div>
-
-                    <div class="sugestao">
-                        <div class="usuario">
-                            <img src="assets/img/razoesparaacreditar.svg" />
-                            <div class="texto">
-                                <div class="nome">razoesparaacreditar</div>
-                                <div class="razao">Novo no Instagram</div>
-                            </div>
-                        </div>
-
-                        <div class="seguir">Seguir</div>
-                    </div>
-
-                    <div class="sugestao">
-                        <div class="usuario">
-                            <img src="assets/img/adorable_animals.svg" />
-                            <div class="texto">
-                                <div class="nome">adorable_animals</div>
-                                <div class="razao">Segue você</div>
-                            </div>
-                        </div>
-
-                        <div class="seguir">Seguir</div>
-                    </div>
-
-                    <div class="sugestao">
-                        <div class="usuario">
-                            <img src="assets/img/smallcutecats.svg" />
-                            <div class="texto">
-                                <div class="nome">smallcutecats</div>
-                                <div class="razao">Segue você</div>
-                            </div>
-                        </div>
-
-                        <div class="seguir">Seguir</div>
-                    </div>
-                </div>
-
-                <div class="links">
-                    Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes •
-                    Hashtags • Idioma
-                </div>
-
-                <div class="copyright">
-                    © 2021 INSTAGRAM DO FACEBOOK
-                </div>
+                <Usuario linkUsuario="catanacomics" nomeUsuario="Catana" />
+                <Sugestoes />
+                <Links />
+                <Copyright />
             </div>
         </div>
     );
@@ -162,6 +80,66 @@ function Post(props) {
                     </div>
                 </div>
             </div>
+        </div>
+    );
+}
+
+function Usuario(props) {
+    return (
+        <div class="usuario">
+            <img src="assets/img/catanacomics.svg" />
+            <div class="texto">
+                <strong>{props.linkUsuario}</strong>
+                {props.nomeUsuario}
+            </div>
+        </div>
+    );
+}
+
+function Sugestoes() {
+    return (
+        <div class="sugestoes">
+            <div class="titulo">
+                Sugestões para você
+                <div>Ver tudo</div>
+            </div>
+            <Sugestao icone="assets/img/bad.vibes.memes.svg" nome="bad.vibes.memes" />
+            <Sugestao icone="assets/img/chibirdart.svg" nome="chibirdart" />
+            <Sugestao icone="assets/img/razoesparaacreditar.svg" nome="razoesparaacreditar" />
+            <Sugestao icone="assets/img/adorable_animals.svg" nome="adorable_animals" />
+            <Sugestao icone="assets/img/smallcutecats.svg" nome="smallcutecats" />
+        </div>
+    );
+}
+
+function Sugestao(props) {
+    return (
+        <div class="sugestao">
+            <div class="usuario">
+                <img src={props.icone} />
+                <div class="texto">
+                    <div class="nome">{props.nome}</div>
+                    <div class="razao">Segue você</div>
+                </div>
+            </div>
+            <div class="seguir">Seguir</div>
+        </div>
+    );
+}
+
+function Links() {
+    return (
+        <div class="links">
+            Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes •
+            Hashtags • Idioma
+        </div>
+    );
+}
+
+function Copyright() {
+    return (
+        <div class="copyright">
+            © 2021 INSTAGRAM DO FACEBOOK
         </div>
     );
 }
