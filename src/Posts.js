@@ -4,7 +4,7 @@ export default function Posts() {
     return (
         <div class="posts">
 
-            {postsProps.map((props) => <Post iconePost={props.iconePost} nome={props.nome} imgPost={props.imgPost} iconePessoaCurtiu={props.iconePessoaCurtiu} pessoaCurtiu={props.pessoaCurtiu} numCurtidas={props.numCurtidas} />)}
+            {postsProps.map(props => <Post iconePost={props.iconePost} nome={props.nome} imgPost={props.imgPost} iconePessoaCurtiu={props.iconePessoaCurtiu} pessoaCurtiu={props.pessoaCurtiu} numCurtidas={props.numCurtidas} />)}
 
         </div>
 

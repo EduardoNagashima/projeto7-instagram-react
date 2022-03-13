@@ -20,12 +20,13 @@ export default function Corpo() {
 }
 
 function Usuario(props) {
+    const { nomeUsuario, linkUsuario } = props;
     return (
         <div class="usuario">
             <img src="assets/img/catanacomics.svg" />
             <div class="texto">
-                <strong>{props.linkUsuario}</strong>
-                {props.nomeUsuario}
+                <strong>{linkUsuario}</strong>
+                {nomeUsuario}
             </div>
         </div>
     );
